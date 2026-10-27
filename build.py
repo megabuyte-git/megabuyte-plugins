@@ -1,5 +1,8 @@
 
-import re, shutil, sys
+import sys
+import shutil
+import argparse
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -84,6 +87,12 @@ def set_manifest_versions(version):
 
 
 def main():
+    _ = argparse.ArgumentParser(
+        description="Build Megabuyte MCP skills from src/skills into plugins/megabuyte/skills. "
+        "This script is only for running before making a commit, though there's no harm in running "
+        "it at any other point."
+    ).parse_args()
+
     failed = False
     for name, errs in build().items():
         failed = True
