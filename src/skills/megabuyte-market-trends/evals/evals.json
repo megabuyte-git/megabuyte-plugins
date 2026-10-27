@@ -1,0 +1,23 @@
+{
+ "skill_name": "megabuyte-market-trends",
+ "evals": [
+  {
+   "id": 1,
+   "prompt": "What does Megabuyte think about the impact of AI on the UK software sector?",
+   "expected_output": "",
+   "files": []
+  },
+  {
+   "id": 2,
+   "prompt": "How is consolidation playing out in UK managed services?",
+   "expected_output": "",
+   "files": []
+  },
+  {
+   "id": 3,
+   "prompt": "Has Megabuyte's view on the payments sector changed over the last year?",
+   "expected_output": "",
+   "files": []
+  }
+ ]
+}

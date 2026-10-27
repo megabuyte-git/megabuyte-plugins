@@ -117,3 +117,7 @@ Ask Claude something like:
 ## Support
 
 [Contact Megabuyte](mailto:customersuccess@megabuyte.com)
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how the skills are built and released.

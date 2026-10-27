@@ -1,0 +1,4 @@
+{"skill_name":"megabuyte-deal-precedents","evals":[
+{"id":1,"prompt":"Precedent deals with disclosed multiples in UK cyber security since 2023","expected_output":"Multiples summary with n, precedent table, caveats on disclosure and EBITDA basis","files":[]},
+{"id":2,"prompt":"A buyer is offering 14x EBITDA for a £15m-revenue payments software business. Is that rich?","expected_output":"Verdict against the disclosed distribution, closest precedents named, small-n handled honestly","files":[]},
+{"id":3,"prompt":"What has Node4 acquired, and who owns it? Put it in Excel.","expected_output":"Company record split by role; xlsx with raw deals and summary tab","files":[]}]}

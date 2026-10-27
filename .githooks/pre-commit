@@ -1,0 +1,17 @@
+#!/bin/sh
+# Rebuild plugins/megabuyte/skills/ from src/ and stage the result.
+# Enable once per clone: git config core.hooksPath .githooks
+set -e
+cd "$(git rev-parse --show-toplevel)"
+
+# The build reads the working tree, so it must match what is being committed.
+inputs="src VERSION build.py"
+if ! git diff --quiet -- $inputs || [ -n "$(git ls-files --others --exclude-standard -- $inputs)" ]; then
+    echo "pre-commit: src/, VERSION or build.py has unstaged or untracked changes." >&2
+    echo "Stage or stash them, then commit again." >&2
+    exit 1
+fi
+
+if command -v python3 >/dev/null 2>&1; then py=python3; else py=python; fi
+$py build.py
+git add plugins/megabuyte/skills plugins/megabuyte/.claude-plugin/plugin.json plugins/megabuyte/.codex-plugin/plugin.json
