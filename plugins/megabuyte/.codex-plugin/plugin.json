@@ -1,0 +1,36 @@
+{
+    "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+    "name": "megabuyte",
+    "version": "0.1.0",
+
+    "description": "Connect to Megabuyte’s UK technology sector intelligence via MCP, including pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings. Requires a Megabuyte subscription.",
+
+    "author": {
+        "name": "Megabuyte",
+        "email": "info@megabuyte.com",
+        "url": "https://megabuyte.com"
+    },
+    "homepage": "https://github.com/megabuyte-git/mb-mcp-claude#readme",
+    "repository": "https://github.com/megabuyte-git/mb-mcp-claude",
+    "license": "© IS Research Ltd. For use by Megabuyte subscribers under the Megabuyte subscription terms.",
+    "keywords": [],
+
+    "extensions": {
+        "com.openai": {
+            "interface": {
+                "displayName": "Megabuyte",
+                "shortDescription": "UK technology sector intelligence from Megabuyte",
+                "longDescription": "Connect to Megabuyte’s UK technology sector intelligence via MCP, including pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings. Requires a Megabuyte subscription.",
+                "developerName": "Megabuyte",
+                "category": "Research",
+                "capabilities": ["Read"],
+                "websiteURL": "https://megabuyte.com",
+                "privacyPolicyURL": "https://megabuyte.com/privacy-policy",
+                "termsOfServiceURL": "https://mb-legal.s3.eu-west-1.amazonaws.com/Terms+and+Conditions+for+Megabuyte+-+V5+Final.pdf",
+                "brandColor": "#FF004D",
+                "composerIcon": "./icon.svg",
+                "logo": "./icon.svg"
+            }
+        }
+    }
+}

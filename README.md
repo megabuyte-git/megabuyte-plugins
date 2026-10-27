@@ -1,6 +1,6 @@
 # Megabuyte for Claude
 
-Connect Claude to Megabuyte's UK technology sector intelligence.
+Connect Claude (and ChatGPT) to Megabuyte's UK technology sector intelligence.
 
 This repository is a plugin marketplace with one plugin, **megabuyte**, which adds:
 
@@ -9,7 +9,7 @@ This repository is a plugin marketplace with one plugin, **megabuyte**, which ad
 
 You'll need a Megabuyte account. Sign-in happens in your browser.
 
-Follow the section for the app you use: [Claude desktop app](#claude-desktop-app-cowork) or [Claude Code](#claude-code).
+Follow the section for the app you use: [Claude desktop app](#claude-desktop-app-cowork), [Claude Code](#claude-code) or [ChatGPT and Codex](#chatgpt-and-codex).
 
 ---
 
@@ -82,6 +82,24 @@ To clear stored credentials: `/mcp` → **plugin:megabuyte:megabuyte-mcp** → *
 
 ---
 
+## ChatGPT and Codex
+
+The same plugin works in the ChatGPT desktop app and Codex.
+
+### Install
+
+1. In the ChatGPT desktop app, open the **Plugins Directory**.
+2. Add `https://github.com/megabuyte-git/megabuyte-plugins` as a marketplace.
+3. Find **megabuyte** and click **Install**.
+
+> **Can't add a marketplace?** In a ChatGPT workspace, your admin may need to publish the plugin to the workspace for you.
+
+### Sign in
+
+When you install, you'll be asked to connect **megabuyte-mcp**. Sign in to Megabuyte in the browser window and approve access.
+
+---
+
 ## Try it
 
 Ask Claude something like:
@@ -93,6 +111,7 @@ Ask Claude something like:
 - **Still says "needs authentication" (Claude Code):** run `/mcp`, select **plugin:megabuyte:megabuyte-mcp**, and choose **Authenticate** or **Re-authenticate**.
 - **Tools not available in a chat (desktop app):** check that **megabuyte-mcp** is switched on in the **+** menu under **Connectors**.
 - **Headless use (`claude -p`, Agent SDK):** sign-in can't happen there. Sign in once in an interactive session first.
+- **Tools not available (ChatGPT or Codex):** open the **megabuyte** plugin in the Plugins Directory and check that **megabuyte-mcp** is connected. Reconnect it if sign-in has expired.
 - **Permission error on a tool call:** your Megabuyte subscription or role may not include that data. Contact your Megabuyte account manager.
 
 ## Support
