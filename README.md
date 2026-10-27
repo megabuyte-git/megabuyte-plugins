@@ -1,4 +1,4 @@
-# Megabuyte for Claude
+# Megabuyte Plugins
 
 Connect Claude (and ChatGPT) to Megabuyte's UK technology sector intelligence.
 
