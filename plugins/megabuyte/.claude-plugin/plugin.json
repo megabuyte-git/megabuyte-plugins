@@ -1,0 +1,23 @@
+{
+    "name": "megabuyte",
+    "version": "0.1.0",
+
+    "displayName": "Megabuyte",
+    "description": "Connect Claude to Megabuyte’s UK technology sector intelligence via MCP, including pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings. Requires a Megabuyte subscription.",
+
+    "author": {
+        "name": "Megabuyte",
+        "email": "info@megabuyte.com",
+        "url": "https://megabuyte.com"
+    },
+    "homepage": "https://github.com/megabuyte-git/mb-mcp-claude#readme",
+    "repository": "https://github.com/megabuyte-git/mb-mcp-claude",
+    "license": "© IS Research Ltd. For use by Megabuyte subscribers under the Megabuyte subscription terms.",
+    "keywords": [],
+
+    "icon": "./icon.svg",
+    "documentationUrl": "https://github.com/megabuyte-git/mb-mcp-claude#readme",
+    "supportUrl": "https://megabuyte.com/contact",
+    "privacyPolicyUrl": "https://megabuyte.com/privacy-policy",
+    "termsOfServiceUrl": "https://mb-legal.s3.eu-west-1.amazonaws.com/Terms+and+Conditions+for+Megabuyte+-+V5+Final.pdf"
+}

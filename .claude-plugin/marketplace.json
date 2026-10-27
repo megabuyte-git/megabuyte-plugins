@@ -1,0 +1,15 @@
+{
+    "name": "megabuyte-plugins",
+    "version": "0.1.0",
+
+    "description": "Official Claude plugins from Megabuyte.",
+
+    "owner": {
+        "name": "Megabuyte",
+        "email": "info@megabuyte.com",
+        "url": "https://megabuyte.com"
+    },
+    "plugins": [
+        {"name": "megabuyte", "source": "./plugins/megabuyte"}
+    ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "megabuyte-mcp": {
+      "type": "http",
+      "url": "https://megabuyte-mcp.com/mcp"
+    }
+  }
+}
