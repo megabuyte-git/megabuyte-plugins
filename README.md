@@ -1,6 +1,6 @@
 # Megabuyte Plugins
 
-Connect Claude (and ChatGPT) to Megabuyte's UK technology sector intelligence.
+Connect Claude (as well as ChatGPT and GitHub Copilot) to Megabuyte's UK technology sector intelligence.
 
 This repository is a plugin marketplace with one plugin, **megabuyte**, which adds:
 
@@ -9,7 +9,7 @@ This repository is a plugin marketplace with one plugin, **megabuyte**, which ad
 
 You'll need a Megabuyte account. Sign-in happens in your browser.
 
-Follow the section for the app you use: [Claude desktop app](#claude-desktop-app-cowork), [Claude Code](#claude-code) or [ChatGPT and Codex](#chatgpt-and-codex).
+Follow the section for the app you use: [Claude desktop app](#claude-desktop-app-cowork), [Claude Code](#claude-code), [ChatGPT and Codex](#chatgpt-and-codex) or [GitHub Copilot](#github-copilot).
 
 ---
 
@@ -100,6 +100,55 @@ When you install, you'll be asked to connect **megabuyte-mcp**. Sign in to Megab
 
 ---
 
+## GitHub Copilot
+
+The same plugin works in GitHub Copilot CLI and in Copilot Chat in VS Code.
+
+### Install (Copilot CLI)
+
+In a Copilot CLI session:
+
+```
+/plugin marketplace add megabuyte-git/megabuyte-plugins
+/plugin install megabuyte@megabuyte-plugins
+```
+
+Or from your shell:
+
+```bash
+copilot plugin marketplace add megabuyte-git/megabuyte-plugins
+copilot plugin install megabuyte@megabuyte-plugins
+```
+
+### Install (VS Code)
+
+1. Open your user settings (JSON) and add the Megabuyte marketplace:
+
+   ```json
+   "chat.plugins.enabled": true,
+   "chat.plugins.marketplaces": ["https://github.com/megabuyte-git/megabuyte-plugins.git"]
+   ```
+
+2. Run **Developer: Reload Window** from the Command Palette.
+3. In the Chat view, select the cog, open **Agent Customizations**, then **Plugins**.
+4. Find **megabuyte** and click **Install**.
+
+### Sign in
+
+1. In Copilot CLI, run `/mcp` and select **megabuyte-mcp**. In VS Code, run **MCP: List Servers**, select **megabuyte-mcp**, then **Start Server**.
+2. Sign in to Megabuyte in the browser window that opens and approve access.
+
+### Update and uninstall
+
+```bash
+copilot plugin update megabuyte
+copilot plugin uninstall megabuyte
+```
+
+In VS Code, manage the plugin from **Agent Plugins - Installed** in the Extensions view.
+
+---
+
 ## Try it
 
 Ask Claude something like:
@@ -112,6 +161,7 @@ Ask Claude something like:
 - **Tools not available in a chat (desktop app):** check that **megabuyte-mcp** is switched on in the **+** menu under **Connectors**.
 - **Headless use (`claude -p`, Agent SDK):** sign-in can't happen there. Sign in once in an interactive session first.
 - **Tools not available (ChatGPT or Codex):** open the **megabuyte** plugin in the Plugins Directory and check that **megabuyte-mcp** is connected. Reconnect it if sign-in has expired.
+- **Tools not available (GitHub Copilot):** run `/mcp` in Copilot CLI, or **MCP: List Servers** in VS Code, and check that **megabuyte-mcp** is running and signed in. Restart it to sign in again.
 - **Permission error on a tool call:** your Megabuyte subscription or role may not include that data. Contact your Megabuyte account manager.
 
 ## Support
