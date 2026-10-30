@@ -1,7 +1,7 @@
 {
     "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
     "name": "megabuyte",
-    "version": "0.3.0",
+    "version": "0.4.0",
 
     "description": "Connect to Megabuyte’s UK technology sector intelligence via MCP, including pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings. Requires a Megabuyte subscription.",
 

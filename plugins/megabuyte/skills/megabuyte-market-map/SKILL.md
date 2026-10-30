@@ -1,13 +1,13 @@
 ---
 name: megabuyte-market-map
-description: Map the structure of a UK technology sector or market using the Megabuyte MCP — its segments, the main players in each by size, who owns them, and recent deal activity. Use this whenever the user asks to map, landscape or lay out a sector ("map the UK cyber security sector", "who are the main players in UK payments", "how is the MSP market structured", "market map", "competitive landscape", "who's in this space"). Also use when they want the map as slides or a spreadsheet. Not for what Megabuyte thinks about a theme or trend (megabuyte-market-trends) or for a filtered target shortlist (megabuyte-target-screen).
+description: Map a UK tech sector from the Megabuyte MCP, covering its segments, main players by size, ownership and recent changes. Use when the user asks to map, landscape or lay out a sector ("map UK cyber security", "who are the main players in UK payments", "how is the MSP market structured", "who's in this space"). Prefer megabuyte-market-trends for Megabuyte's view of a theme and megabuyte-target-screen for target lists, when installed.
 ---
 
 # Megabuyte market map
 
-Lays out who is in a UK tech market and how it is structured: segments, leading players by size, ownership and recent deal activity, with a short Megabuyte view.
+Lays out who is in a UK tech market and how it is structured: segments, leading players by size and ownership, with a short Megabuyte view.
 
-**Read `references/conventions.md` first.** For any file export, also read `references/brand.md` and run `scripts/brand_setup.py`.
+**Read `references/conventions.md` first.** 
 
 ## Workflow
 
@@ -15,8 +15,8 @@ Lays out who is in a UK tech market and how it is structured: segments, leading 
 
 2. **Segment statistics.** One `benchmark_financials` call with `sub_peer_group` set to all the segments and `group_by: "sub_peer_group"`, for company counts and median revenue, growth and adjusted EBITDA margin per segment.
 
-3. **Find the market's players by every route** (conventions §11). A market is rarely one taxonomy branch: payments players also sit in Banking, Financing and software leaves. In parallel:
-   - **Taxonomy:** one `search_companies` call per resolved segment, with `sub_peer_group: [that segment]`, `collapse_to_group: true`, `sort_by: "revenue"`, `limit: 10`, and `fields` for revenue, financial_year, organic_growth_pct, ebitda_margin_pct, ownership, investors, postcode and keywords.
+3. **Find the market's players by all four routes** (conventions §11). Every route is required. A market is rarely one taxonomy branch: payments players also sit in Banking, Financing and software leaves. In parallel:
+   - **Taxonomy:** one `search_companies` call per resolved segment, with `sub_peer_group: [that segment]`, `collapse_to_group: true`, `exclude_closed_profiles: true`, `sort_by: "revenue"`, `limit: 10`, and `fields` for revenue, financial_year, organic_growth_pct, ebitda_margin_pct, ownership, investors, postcode and keywords.
      - **Do not pass the plan_id on these calls.** The plan widens a single-segment call back to the whole theme; check `guard_notes`, and re-call without the plan_id if it happened.
    - **Keywords:** `guided_keywords: true` over the theme's leaves to read the capability vocabulary. Then `search_companies` with the 3–6 strongest `keywords` across all sectors, `sort_by: "revenue"`, for players filed elsewhere.
    - **Similar companies:** `find_similar_companies` seeded on the 2–3 largest players found, for businesses that read like them.
@@ -29,30 +29,27 @@ Lays out who is in a UK tech market and how it is structured: segments, leading 
 
    Each player shows which route(s) found it.
 
-5. **Deal activity.** One `get_deals` call over all the segments for the last 24 months: quote the total, the split by deal category (M&A, PE, VC) where the answer gives it, and the 3–5 largest deals with dates and parties.
+5. **Structural changes** (optional, brief). Run `get_deals` over the segments for the last 24 months only to correct the map, not to report deal activity. Use it to: mark acquired players with their new owner, add consolidators and acquirers that sit outside the taxonomy, and add recently funded entrants whose revenue isn't held. Don't report deal counts, category splits, values or multiples unless the user asks. In the output, fold these findings into the player tables and ownership grid rather than giving them their own section.
 
-6. **Megabuyte view.** One paragraph, in your own words, from the newest Market Analysis (`get_analysis`, `analysis_type: "market"`, the peer group) or the newest peer-group quarterly (`get_reports`, `report_family: "PeerGroupQuarterly"`). Date it. Keep it brief; a deeper thematic view is the market trends skill's job.
+6. **Megabuyte view.** One paragraph, in your own words, from the newest Market Analysis (`get_analysis`, `analysis_type: "market"`, the peer group) or the newest peer-group quarterly (`get_reports`, `report_family: "PeerGroupQuarterly"`). Date it. Keep it brief: the map is about structure, not a full research view. Leave out valuation and multiples commentary.
 
 7. **Check** with `check_answer`, then answer.
 
 ## Output structure
 
-1. **Headline**: the sector as read, the number of segments and companies, and the snapshot date.
+**Provenance labels** (conventions §4): Segment statistics, player figures and ownership are **Megabuyte data**; counts in the ownership-and-scale grid are **AI calculations**; capability clusters and the "Filed elsewhere" grouping are **AI analysis**; the Megabuyte view is **Megabuyte research (AI summary)**.
+
+1. **Headline**: the sector as read, the number of segments and companies, and the snapshot date. Directly under it, the **Routes run** line (conventions §11).
 2. **Segment overview table**: segment, companies held, median revenue, median organic growth, median adjusted EBITDA margin, with n per metric.
 3. **Leading players by segment**: for each segment (and "Filed elsewhere"), a table of rank, company (trading name, profile link), revenue (£m, FY), organic growth, adjusted EBITDA margin, ownership and owners, town or city, found via.
 4. **Capability map**: the capability clusters, each with its players and the keywords that define it. A player can sit in more than one cluster.
 5. **Ownership and scale**: a grid of ownership type × revenue band, counting the players shown, labelled as covering the players found, not the whole market.
-6. **Deal activity**: count and largest deals in the last 24 months.
-7. **Megabuyte view**: one dated paragraph.
-8. **Coverage notes**, then **Sources**.
-
-**Exports:**
-- **PowerPoint:** an opening map slide (a grid of capability clusters or segments with their leading players), then one slide per segment, a capability slide, an ownership-and-scale slide and a deal activity slide.
-- **Excel:** the full player list.
+6. **Megabuyte view**: one dated paragraph.
+7. **Coverage notes**, then **Sources**.
 
 ## Watch-outs
 
-- Rank by revenue held. Companies without a revenue figure won't appear, so say so in the coverage notes.
+- Rank by revenue held. Companies without a revenue figure won't appear, except recently funded entrants added in step 5 (shown with revenue "—"), so say so in the coverage notes.
 - Overseas-headquartered groups with UK entities (e.g. a US parent's UK subsidiary) appear on their UK filings; note it where it explains an outlier.
 - Short or long accounting periods are annualised by the server; flag any company whose growth is withheld because of that.
 - Use trading names (`short_name`), never bidco or holding entities.

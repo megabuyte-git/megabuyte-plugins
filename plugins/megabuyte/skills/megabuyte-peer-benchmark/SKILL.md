@@ -1,13 +1,13 @@
 ---
 name: megabuyte-peer-benchmark
-description: Benchmark a UK technology company against its peers, or build a comps table, using the Megabuyte MCP. Use this whenever the user asks how a company compares, stacks up or ranks against peers/competitors/the sector, wants a peer set, lookalikes, "who else is like X", a comparables/comps table, median or quartile positioning, or describes their own business ("we're a £30m MSP at 15% EBITDA — how do we compare?"). Also use when they want the benchmark exported as a document or slides.
+description: Benchmark a UK tech company against peers, or build a comps table, from the Megabuyte MCP. Use when the user asks how a company compares, stacks up or ranks against peers or its sector, wants lookalikes, "who else is like X", median or quartile positioning, or describes their own business ("we're a £30m MSP at 15% EBITDA"). Prefer megabuyte-target-screen for targets and megabuyte-market-map for whole sectors, when installed.
 ---
 
 # Megabuyte peer benchmark
 
 Places one company (named or described) against a defensible peer set and Megabuyte's population statistics, or lays out several named companies side by side.
 
-**Read `references/conventions.md` first.** For any file export, also read `references/brand.md` and run `scripts/brand_setup.py`.
+**Read `references/conventions.md` first.** 
 
 ## Pick the mode
 
@@ -36,6 +36,8 @@ Places one company (named or described) against a defensible peer set and Megabu
 
 ## Output structure
 
+**Provenance labels** (conventions §4): Company figures and population medians and quartiles are **Megabuyte data**; the subject's quartile position and the Read are **AI analysis**; any statistic you compute yourself is an **AI calculation**.
+
 1. **Headline**: one sentence on where the subject sits. Example: "Acme is upper-quartile on growth (24% vs a 9% median) but below median on EBITDA margin (11% vs 15%) among 40 IT managed services peers of £15–150m revenue."
 2. **Positioning table**: one row per metric with columns for subject, lower quartile, median, upper quartile, n, and the subject's quartile. Always show n, because EBITDA n is usually much smaller than revenue n.
 3. **Comps table**: company, revenue, growth, gross margin, EBITDA margin and headcount, each with FY. Sort by revenue. Mark estimated revenue with "(est.)" and leave blanks as "—", never 0.
@@ -43,11 +45,9 @@ Places one company (named or described) against a defensible peer set and Megabu
 5. **Method**: which engine built the peer set, the size band, the taxonomy level, and any peers removed and why.
 6. **Coverage notes**, then **Sources**.
 
-For slide exports, put the positioning table on one slide and the comps table on another, each with its method footnote.
-
 ## Watch-outs
 
-- EBITDA is always adjusted EBITDA (conventions §3). In comps tables, show adjusted EBITDA as revenue × `ebitda_margin_pct` and label the column "Adj. EBITDA". Position companies on `ebitda_margin_pct`, never on `ebitda_gbp`.
+- EBITDA is always adjusted EBITDA (conventions §3): label the comps column "Adj. EBITDA" for Megabuyte-covered companies and "EBITDA (as filed)" otherwise. Position companies on `ebitda_margin_pct`.
 - Show organic growth beside revenue growth where held.
 - Percentages are 0–100. A user's "15% margin" is `15`.
 - Don't rank on a metric held for fewer than 5 peers. Report the count instead.

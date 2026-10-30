@@ -1,13 +1,13 @@
 ---
 name: megabuyte-market-trends
-description: Summarise what Megabuyte's research says about a theme or trend in UK technology, within one sector or across several, using the Megabuyte MCP. Use this whenever the user asks what Megabuyte thinks, is seeing or has written about a theme ("what does Megabuyte think about AI in software?", "how is consolidation playing out in MSPs?", "what are the drivers and risks in cyber?", "has Megabuyte's view on payments changed?", "outlook for UK IT services"). Also use for drafting a market or sector section from Megabuyte research, and when they want it exported to Word. Not for numeric trends in deal volumes or multiples (megabuyte-deal-precedents) or for who the players are (megabuyte-market-map).
+description: What Megabuyte's research says about a theme in UK tech, within or across sectors, from the Megabuyte MCP. Use for "what does Megabuyte think about…", how a trend is playing out (e.g. AI in software, MSP consolidation), drivers, risks, outlook, whether Megabuyte's view has changed, or drafting a market section from its research. Prefer megabuyte-deal-precedents for deal or multiple trends and megabuyte-market-map for the players, when installed.
 ---
 
 # Megabuyte market trends
 
 Summarises Megabuyte's published research on a theme: the view, its drivers and risks, and how it has shifted, quoted and dated.
 
-**Read `references/conventions.md` first.** For any file export, also read `references/brand.md` and run `scripts/brand_setup.py`.
+**Read `references/conventions.md` first.** 
 
 ## Workflow
 
@@ -25,7 +25,7 @@ Summarises Megabuyte's published research on a theme: the view, its drivers and 
    - **Company-level views:** `semantic_search` with `sources: ["company_analysis","news"]` and the theme in the question. Company Analyses and the analyst comment in news articles (Megabuyte's view on a company's results or deal) often carry the sharpest views on a theme. Aggregate across companies: "several analyses of MSPs note…", with examples, never a count.
    - **Adjacent areas:** themes cross the taxonomy (MSP consolidation also runs through Telecoms Services and IT Consulting). Use `search_companies` with `keywords` and `find_similar_companies` on 2–3 companies central to the theme to find which other peer groups are involved. Add those groups to `sectors` in the searches above, and say you widened.
 
-4. **Supporting numbers (optional, and few).** At most two or three population statistics from `benchmark_financials` (e.g. median organic growth in the segment), each with its n and date. Leave trend lines in deal volumes or multiples to the deal precedents skill, and offer it.
+4. **Supporting numbers (optional, and few).** At most two or three population statistics from `benchmark_financials` (e.g. median organic growth in the segment), each with its n and date. For a numeric trend in deal volumes or multiples, give at most the headline: one `get_deals` count for the window, or the disclosed median with its n. Don't send the user to another skill.
 
 5. **Write.** Summarise in your own words. Attribute each point to a dated source (report title and date, or article and date). Where fewer than two dated passages support a point, say the research says little on it.
 
@@ -33,14 +33,14 @@ Summarises Megabuyte's published research on a theme: the view, its drivers and 
 
 ## Output structure
 
+**Provenance labels** (conventions §4): Themes and the headline view are **Megabuyte research (AI summary)**; supporting statistics are **Megabuyte data**; any judgement on how the view has shifted is **AI analysis**.
+
 1. **Headline view**: 2–3 sentences on what Megabuyte's research says, with the date range read.
 2. **Themes**: 3–5 short sections (e.g. drivers, risks, winners and losers by segment, AI impact), each grounded in dated sources, combining sector research with the company-level views.
 3. **How the view has shifted**: only if asked, or if the research clearly changed within the window. Compare earlier and later statements with their dates.
 4. **Supporting data**: optional, at most three population statistics.
 5. **What the research doesn't cover**: e.g. no market sizing or forecasts held.
 6. **Sources**: the reports, analyses and articles read, with dates and links.
-
-Word exports follow the same structure.
 
 ## Watch-outs
 
