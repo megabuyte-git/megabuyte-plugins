@@ -1,4 +1,0 @@
-{"skill_name":"megabuyte-peer-benchmark","evals":[
-{"id":1,"prompt":"How does Node4 stack up against its peers on growth and margin?","expected_output":"Positioning table with n and quartiles, peer-set method stated","files":[]},
-{"id":2,"prompt":"We're a £30m MSP doing 15% EBITDA and 10% growth. Where do we sit?","expected_output":"Described-business benchmark in a size band; no named subject lookup","files":[]},
-{"id":3,"prompt":"Comps table for Softcat, Computacenter and Bytes","expected_output":"Side-by-side table with FY and source, est. flags, no zeros for blanks","files":[]}]}

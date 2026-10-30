@@ -1,4 +1,0 @@
-{"skill_name":"megabuyte-company-brief","evals":[
-{"id":1,"prompt":"I'm meeting the CEO of Node4 on Thursday. Prep me.","expected_output":"Full brief in the set structure, with questions to probe, figures carrying FY and source, dated Megabuyte view, coverage notes","files":[]},
-{"id":2,"prompt":"What do we know about Bridewell? Keep it short.","expected_output":"Condensed snapshot, financials and ownership; gaps stated, not guessed","files":[]},
-{"id":3,"prompt":"Give me a brief on Softcat including their ARR and churn, as a Word doc","expected_output":"States that ARR and churn aren't held and offers a proxy; exports a document with sources block and footer","files":[]}]}
