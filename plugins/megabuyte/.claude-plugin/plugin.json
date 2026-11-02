@@ -1,10 +1,10 @@
 {
     "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
     "name": "megabuyte",
-    "version": "0.5.0",
+    "version": "0.5.1",
 
     "displayName": "Megabuyte",
-    "description": "Pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings, for connecting Claude to Megabuyte’s UK technology sector intelligence via MCP. Requires a connection to Megabuyte's MCP server.",
+    "description": "Megabuyte MCP pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings. Requires a connection to Megabuyte's MCP server.",
 
     "author": {
         "name": "Megabuyte",
