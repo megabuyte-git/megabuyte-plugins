@@ -1,17 +1,17 @@
 {
     "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
     "name": "megabuyte",
-    "version": "0.4.0",
+    "version": "0.5.0",
 
-    "description": "Connect to Megabuyte’s UK technology sector intelligence via MCP, including pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings. Requires a Megabuyte subscription.",
+    "description": "Pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings, for connecting Claude to Megabuyte’s UK technology sector intelligence via MCP. Requires a connection to Megabuyte's MCP server.",
 
     "author": {
         "name": "Megabuyte",
         "email": "info@megabuyte.com",
         "url": "https://megabuyte.com"
     },
-    "homepage": "https://github.com/megabuyte-git/mb-mcp-claude#readme",
-    "repository": "https://github.com/megabuyte-git/mb-mcp-claude",
+    "homepage": "https://github.com/megabuyte-git/megabuyte-plugins#readme",
+    "repository": "https://github.com/megabuyte-git/megabuyte-plugins",
     "license": "© IS Research Ltd. For use by Megabuyte subscribers under the Megabuyte subscription terms.",
     "keywords": [],
 
@@ -19,8 +19,8 @@
         "com.openai": {
             "interface": {
                 "displayName": "Megabuyte",
-                "shortDescription": "UK technology sector intelligence from Megabuyte",
-                "longDescription": "Connect to Megabuyte’s UK technology sector intelligence via MCP, including pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings. Requires a Megabuyte subscription.",
+                "shortDescription": "UK technology sector intelligence skills from Megabuyte",
+                "longDescription": "Pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings, for connecting Claude to Megabuyte’s UK technology sector intelligence via MCP. Requires a connection to Megabuyte's MCP server.",
                 "developerName": "Megabuyte",
                 "category": "Research",
                 "capabilities": ["Read"],

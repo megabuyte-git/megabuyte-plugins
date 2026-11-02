@@ -1,23 +1,23 @@
 {
     "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
     "name": "megabuyte",
-    "version": "0.4.0",
+    "version": "0.5.0",
 
     "displayName": "Megabuyte",
-    "description": "Connect Claude to Megabuyte’s UK technology sector intelligence via MCP, including pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings. Requires a Megabuyte subscription.",
+    "description": "Pre-defined skills for company briefs, peer benchmarks, deal precedents, buyer and target screens, market maps and daily briefings, for connecting Claude to Megabuyte’s UK technology sector intelligence via MCP. Requires a connection to Megabuyte's MCP server.",
 
     "author": {
         "name": "Megabuyte",
         "email": "info@megabuyte.com",
         "url": "https://megabuyte.com"
     },
-    "homepage": "https://github.com/megabuyte-git/mb-mcp-claude#readme",
-    "repository": "https://github.com/megabuyte-git/mb-mcp-claude",
+    "homepage": "https://github.com/megabuyte-git/megabuyte-plugins#readme",
+    "repository": "https://github.com/megabuyte-git/megabuyte-plugins",
     "license": "© IS Research Ltd. For use by Megabuyte subscribers under the Megabuyte subscription terms.",
     "keywords": [],
 
     "icon": "./icon.svg",
-    "documentationUrl": "https://github.com/megabuyte-git/mb-mcp-claude#readme",
+    "documentationUrl": "https://github.com/megabuyte-git/megabuyte-plugins#readme",
     "supportUrl": "https://megabuyte.com/contact",
     "privacyPolicyUrl": "https://megabuyte.com/privacy-policy",
     "termsOfServiceUrl": "https://mb-legal.s3.eu-west-1.amazonaws.com/Terms+and+Conditions+for+Megabuyte+-+V5+Final.pdf"
